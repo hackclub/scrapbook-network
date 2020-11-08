@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Graph from "react-graph-network";
 import { orderBy, filter } from "lodash";
+import Meta from "@hackclub/meta";
 const fontSize = 14;
 const radius = 10;
 
@@ -85,26 +86,59 @@ const Node = ({ node }) => {
           </pattern>
         </>
       </defs>
-      <circle fill={"url(#"+node.id+")"} r="10" />
+      <circle fill={"url(#" + node.id + ")"} r="10" />
     </>
   );
 };
 
 export default function Home(props) {
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "90vh" }}>
+      <Meta
+        as={Head} // component to wrap tags in, defaults to React.Fragment
+        name="Hack Club Scrapbook"
+        title="The Network" // page title
+        description="Representation of the network created by Scrapbook's webring feature." // page description
+        image="https://cloud-huqig4hfu.vercel.app/0screenshot_2020-11-08_at_12.34.11_pm.png" // large summary image URL
+        color="#ec3750" // theme color
+      />
       <Graph
         NodeComponent={Node}
         data={props}
         id="graph"
         {...{
           nodeDistance: 100,
-          zoomDepth: 1,
+          zoomDepth: 3,
           hoverOpacity: 0.3,
           enableDrag: true,
-          pullIn: true,
+          pullIn: false,
         }}
       />
+      <aside className="container banner">
+        <p className="post-text">
+          Representation of the network created by{" "}
+          <a href="https://scrapbook.hackclub.com">Scrapbook</a>'s webring
+          feature.
+        </p>
+        <style jsx>{`
+          .banner {
+            padding: 0px 24px 12px;
+            border-radius: 12px;
+            max-width: 720px;
+            background-color: var(--colors-orange);
+            color: var(--colors-white);
+            margin: 12px auto 24px;
+            text-align: center;
+          }
+          .post-text {
+            line-height: 1.375;
+          }
+          .post-text a {
+            color: inherit;
+            font-weight: bold;
+          }
+        `}</style>
+      </aside>
     </div>
   );
 }
@@ -133,6 +167,7 @@ export async function getStaticProps(context) {
   );
 
   return {
-    props: { nodes: users, links }, revalidate: 1
+    props: { nodes: users, links },
+    revalidate: 1,
   };
 }

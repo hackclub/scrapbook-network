@@ -1076,6 +1076,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@hackclub/meta@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@hackclub/meta/-/meta-1.0.0.tgz#421731bd87e8fdeb4cc33afd12d68c8266ce79ae"
+  integrity sha512-Xm1QgCxWAzG8ekV3xSf0gZ/6gCL4BuaKl3EjAy3e8QhoKDCjO7O4TtlfeUyLoJvIHzgYN/1sbZtkZ1VE6Pw5XA==
+
 "@hapi/accept@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.1.tgz#068553e867f0f63225a506ed74e899441af53e10"
