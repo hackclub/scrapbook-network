@@ -1,66 +1,7 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import Graph from "react-graph-network";
 import { orderBy, filter } from "lodash";
 import Meta from "@hackclub/meta";
-const fontSize = 14;
-const radius = 10;
-
-const data = {
-  nodes: [
-    {
-      id: "HkqEDLvxE",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-    {
-      id: "011jVS4rb",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-    {
-      id: "PXACjDxmR",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-    {
-      id: "kuVISwh7w",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-    {
-      id: "UIEjvLJMd",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-    {
-      id: "ZVi8fWDBx",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-    {
-      id: "H-06WvsfJ",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-    {
-      id: "Fbc9iwnJl",
-      image:
-        "https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachmentThumbnails%2F75da7a62e42499f5e205ce7a8deeed7a%2F02a464cc&w=96&q=75",
-    },
-  ],
-  links: [
-    { source: "HkqEDLvxE", target: "011jVS4rb" },
-    { source: "011jVS4rb", target: "PXACjDxmR" },
-    { source: "PXACjDxmR", target: "kuVISwh7w" },
-    { source: "PXACjDxmR", target: "Fbc9iwnJl" },
-    { source: "PXACjDxmR", target: "UIEjvLJMd" },
-    { source: "kuVISwh7w", target: "UIEjvLJMd" },
-    { source: "UIEjvLJMd", target: "ZVi8fWDBx" },
-    { source: "ZVi8fWDBx", target: "H-06WvsfJ" },
-    { source: "H-06WvsfJ", target: "Fbc9iwnJl" },
-  ],
-};
 
 const Node = ({ node }) => {
   return (
