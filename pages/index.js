@@ -67,7 +67,7 @@ const Node = ({ node }) => {
       <defs>
         <>
           <pattern
-            id="pf"
+            id={node.id}
             x="0"
             y="0"
             height="100%"
@@ -85,7 +85,7 @@ const Node = ({ node }) => {
           </pattern>
         </>
       </defs>
-      <circle fill="url(#pf)" r="10" />
+      <circle fill={"url(#"+node.id+")"} r="10" />
     </>
   );
 };
