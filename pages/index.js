@@ -86,7 +86,8 @@ const Node = ({ node }) => {
           </pattern>
         </>
       </defs>
-      <circle fill={"url(#" + node.id + ")"} r="10" />
+      <a href={`https://scrapbook.hackclub.com/${node.username}`}>
+      <circle fill={"url(#" + node.id + ")"} r="10" /></a>
     </>
   );
 };
@@ -147,10 +148,11 @@ export async function getStaticProps(context) {
   let users = await fetch("https://scrapbook.hackclub.com/api/users/").then(
     (r) =>
       r.json().then((users) =>
-        users.map(({ id, avatar, webring }) => ({
+        users.map(({ id, avatar, webring, username }) => ({
           id,
           image: avatar,
           webring,
+          username
         }))
       )
   );
