@@ -109,7 +109,7 @@ export default function Home(props) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   let users = await fetch("https://scrapbook.hackclub.com/api/users/").then(
     (r) =>
       r.json().then((users) =>
@@ -133,6 +133,6 @@ export async function getServerSideProps(context) {
   );
 
   return {
-    props: { nodes: users, links },
+    props: { nodes: users, links }, revalidate: 1
   };
 }
