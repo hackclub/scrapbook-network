@@ -1,0 +1,21 @@
+{
+  "name": "scrapbook-network",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "d3": "^6.2.0",
+    "d3-selection": "^2.0.0",
+    "d3-shape": "^2.0.0",
+    "lodash": "^4.17.20",
+    "next": "10.0.1",
+    "react": "17.0.1",
+    "react-d3-graph": "^2.5.0",
+    "react-dom": "17.0.1",
+    "react-graph-network": "^1.0.6"
+  }
+}
