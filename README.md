@@ -4,4 +4,4 @@ This site fetches each [Scrapbook](https://scrapbook.hackclub.com) user's webrin
 
 To do so it uses the [Scrapbook API](https://github.com/hackclub/summer-scrapbook#public-api) to fetch the data and then uses the [react-graph-network](https://www.npmjs.com/package/react-graph-network) module to create the graph with [Next.js](https://nextjs.org).
 
-:rocket: built by @sampoder 
+:rocket: built by [@sampoder](https://github.com/sampoder)
